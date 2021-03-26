@@ -1,3 +1,3 @@
-defmodule PhotoBlogWeb.LayoutView do
-  use PhotoBlogWeb, :view
+defmodule EventsWeb.LayoutView do
+  use EventsWeb, :view
 end

@@ -1,3 +1,3 @@
-defmodule PhotoBlogWeb.PageViewTest do
-  use PhotoBlogWeb.ConnCase, async: true
+defmodule EventsWeb.PageViewTest do
+  use EventsWeb.ConnCase, async: true
 end

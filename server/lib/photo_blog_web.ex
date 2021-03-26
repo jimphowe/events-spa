@@ -1,12 +1,12 @@
-defmodule PhotoBlogWeb do
+defmodule EventsWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PhotoBlogWeb, :controller
-      use PhotoBlogWeb, :view
+      use EventsWeb, :controller
+      use EventsWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,11 +19,11 @@ defmodule PhotoBlogWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PhotoBlogWeb
+      use Phoenix.Controller, namespace: EventsWeb
 
       import Plug.Conn
-      import PhotoBlogWeb.Gettext
-      alias PhotoBlogWeb.Router.Helpers, as: Routes
+      import EventsWeb.Gettext
+      alias EventsWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -31,7 +31,7 @@ defmodule PhotoBlogWeb do
     quote do
       use Phoenix.View,
         root: "lib/photo_blog_web/templates",
-        namespace: PhotoBlogWeb
+        namespace: EventsWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule PhotoBlogWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PhotoBlogWeb.Gettext
+      import EventsWeb.Gettext
     end
   end
 
@@ -66,9 +66,9 @@ defmodule PhotoBlogWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import PhotoBlogWeb.ErrorHelpers
-      import PhotoBlogWeb.Gettext
-      alias PhotoBlogWeb.Router.Helpers, as: Routes
+      import EventsWeb.ErrorHelpers
+      import EventsWeb.Gettext
+      alias EventsWeb.Router.Helpers, as: Routes
     end
   end
 

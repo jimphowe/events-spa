@@ -1,14 +1,14 @@
-defmodule PhotoBlog.PostsTest do
-  use PhotoBlog.DataCase
+defmodule Events.PostsTest do
+  use Events.DataCase
 
-  alias PhotoBlog.Posts
+  alias Events.Posts
 
   describe "posts" do
-    alias PhotoBlog.Posts.Post
+    alias Events.Posts.Post
 
-    @valid_attrs %{body: "some body", photo_hash: "some photo_hash"}
-    @update_attrs %{body: "some updated body", photo_hash: "some updated photo_hash"}
-    @invalid_attrs %{body: nil, photo_hash: nil}
+    @valid_attrs %{body: "some body"}
+    @update_attrs %{body: "some updated body"}
+    @invalid_attrs %{body: nil}
 
     def post_fixture(attrs \\ %{}) do
       {:ok, post} =
@@ -32,7 +32,6 @@ defmodule PhotoBlog.PostsTest do
     test "create_post/1 with valid data creates a post" do
       assert {:ok, %Post{} = post} = Posts.create_post(@valid_attrs)
       assert post.body == "some body"
-      assert post.photo_hash == "some photo_hash"
     end
 
     test "create_post/1 with invalid data returns error changeset" do
@@ -43,7 +42,6 @@ defmodule PhotoBlog.PostsTest do
       post = post_fixture()
       assert {:ok, %Post{} = post} = Posts.update_post(post, @update_attrs)
       assert post.body == "some updated body"
-      assert post.photo_hash == "some updated photo_hash"
     end
 
     test "update_post/2 with invalid data returns error changeset" do

@@ -1,13 +1,13 @@
-defmodule PhotoBlog.Posts.Post do
+defmodule Events.Posts.Post do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "posts" do
+    field :eventname, :string
+    field :date, :string
     field :body, :string
-    field :photo_hash, :string
-    belongs_to :user, PhotoBlog.Users.User
-    has_many :comments, PhotoBlog.Comments.Comment
-    has_many :votes, PhotoBlog.Votes.Vote
+    belongs_to :user, Events.Users.User
+    has_many :comments, Events.Comments.Comment
 
     timestamps()
   end
@@ -15,7 +15,7 @@ defmodule PhotoBlog.Posts.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:body, :photo_hash, :user_id])
-    |> validate_required([:body, :photo_hash, :user_id])
+    |> cast(attrs, [:eventname, :date, :body, :user_id])
+    |> validate_required([:eventname, :date, :body, :user_id])
   end
 end

@@ -1,4 +1,4 @@
-defmodule PhotoBlogWeb.Telemetry do
+defmodule EventsWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -49,7 +49,7 @@ defmodule PhotoBlogWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {PhotoBlogWeb, :count_users, []}
+      # {EventsWeb, :count_users, []}
     ]
   end
 end

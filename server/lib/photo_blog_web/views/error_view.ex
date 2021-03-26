@@ -1,5 +1,5 @@
-defmodule PhotoBlogWeb.ErrorView do
-  use PhotoBlogWeb, :view
+defmodule EventsWeb.ErrorView do
+  use EventsWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

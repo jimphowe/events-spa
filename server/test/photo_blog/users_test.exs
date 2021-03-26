@@ -1,10 +1,10 @@
-defmodule PhotoBlog.UsersTest do
-  use PhotoBlog.DataCase
+defmodule Events.UsersTest do
+  use Events.DataCase
 
-  alias PhotoBlog.Users
+  alias Events.Users
 
   describe "users" do
-    alias PhotoBlog.Users.User
+    alias Events.Users.User
 
     @valid_attrs %{name: "some name", password_hash: "some password_hash"}
     @update_attrs %{name: "some updated name", password_hash: "some updated password_hash"}

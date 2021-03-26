@@ -1,4 +1,4 @@
-defmodule PhotoBlogWeb.Endpoint do
+defmodule EventsWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :photo_blog
 
   # The session will be stored in the cookie and signed,
@@ -10,7 +10,7 @@ defmodule PhotoBlogWeb.Endpoint do
     signing_salt: "tAC5kuvw"
   ]
 
-  socket "/socket", PhotoBlogWeb.UserSocket,
+  socket "/socket", EventsWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -51,5 +51,5 @@ defmodule PhotoBlogWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug PhotoBlogWeb.Router
+  plug EventsWeb.Router
 end

@@ -70,7 +70,6 @@ export async function create_post(post) {
   let token = state?.session?.token;
 
   let data = new FormData();
-  data.append("post[photo]", post.photo);
   data.append("post[body]", post.body);
   let opts = {
     method: 'POST',

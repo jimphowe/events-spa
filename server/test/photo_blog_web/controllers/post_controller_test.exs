@@ -1,18 +1,28 @@
-defmodule PhotoBlogWeb.PostControllerTest do
-  use PhotoBlogWeb.ConnCase
+defmodule EventsWeb.PostControllerTest do
+  use EventsWeb.ConnCase
 
-  alias PhotoBlog.Posts
-  alias PhotoBlog.Posts.Post
+  alias Events.Posts
+  alias Events.Posts.Post
 
   @create_attrs %{
+    eventname: "some event name",
+  }
+  @update_attrs %{
+    eventname: "some updated event name",
+  }
+  @create_attrs %{
+    date: "some date",
+  }
+  @update_attrs %{
+    date: "some updated date",
+  }
+  @create_attrs %{
     body: "some body",
-    photo_hash: "some photo_hash"
   }
   @update_attrs %{
     body: "some updated body",
-    photo_hash: "some updated photo_hash"
   }
-  @invalid_attrs %{body: nil, photo_hash: nil}
+  @invalid_attrs %{body: nil,}
 
   def fixture(:post) do
     {:ok, post} = Posts.create_post(@create_attrs)
@@ -39,8 +49,9 @@ defmodule PhotoBlogWeb.PostControllerTest do
 
       assert %{
                "id" => id,
-               "body" => "some body",
-               "photo_hash" => "some photo_hash"
+               "eventname" => "some event name"
+               "date" => "some date"
+               "body" => "some body"
              } = json_response(conn, 200)["data"]
     end
 
@@ -61,8 +72,9 @@ defmodule PhotoBlogWeb.PostControllerTest do
 
       assert %{
                "id" => id,
-               "body" => "some updated body",
-               "photo_hash" => "some updated photo_hash"
+               "eventname" => "some updated event name"
+               "date" => "some updated event date"
+               "body" => "some updated body"
              } = json_response(conn, 200)["data"]
     end
 

@@ -1,12 +1,12 @@
-defmodule PhotoBlog.Users do
+defmodule Events.Users do
   @moduledoc """
   The Users context.
   """
 
   import Ecto.Query, warn: false
-  alias PhotoBlog.Repo
+  alias Events.Repo
 
-  alias PhotoBlog.Users.User
+  alias Events.Users.User
 
   @doc """
   Returns the list of users.

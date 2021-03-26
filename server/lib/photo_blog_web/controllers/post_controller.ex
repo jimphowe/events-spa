@@ -1,14 +1,14 @@
-defmodule PhotoBlogWeb.PostController do
-  use PhotoBlogWeb, :controller
+defmodule EventsWeb.PostController do
+  use EventsWeb, :controller
 
-  alias PhotoBlog.Posts
-  alias PhotoBlog.Posts.Post
+  alias Events.Posts
+  alias Events.Posts.Post
 
-  alias PhotoBlogWeb.Plugs
+  alias EventsWeb.Plugs
   plug Plugs.RequireAuth when action
     in [:create]
 
-  action_fallback PhotoBlogWeb.FallbackController
+  action_fallback EventsWeb.FallbackController
 
   def index(conn, _params) do
     posts = Posts.list_posts()
@@ -16,14 +16,9 @@ defmodule PhotoBlogWeb.PostController do
   end
 
   def create(conn, %{"post" => post_params}) do
-    {:ok, photo_hash} = PhotoBlog.Photos.save_photo(
-      post_params["photo"].filename,
-      post_params["photo"].path
-    )
     user = conn.assigns[:current_user]
     post_params = post_params
     |> Map.put("user_id", user.id)
-    |> Map.put("photo_hash", photo_hash)
 
     IO.inspect({:post, post_params})
 

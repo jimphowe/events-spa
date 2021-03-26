@@ -1,4 +1,4 @@
-defmodule PhotoBlogWeb.Plugs.RequireAuth do
+defmodule EventsWeb.Plugs.RequireAuth do
   import Plug.Conn
 
   def init(args), do: args
@@ -8,7 +8,7 @@ defmodule PhotoBlogWeb.Plugs.RequireAuth do
     case Phoenix.Token.verify(conn, "user_id",
           token, max_age: 86400) do
       {:ok, user_id} ->
-        user = PhotoBlog.Users.get_user!(user_id)
+        user = Events.Users.get_user!(user_id)
         assign(conn, :current_user, user)
       {:error, err} ->
         conn

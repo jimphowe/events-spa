@@ -1,12 +1,12 @@
-defmodule PhotoBlog.Comments do
+defmodule Events.Comments do
   @moduledoc """
   The Comments context.
   """
 
   import Ecto.Query, warn: false
-  alias PhotoBlog.Repo
+  alias Events.Repo
 
-  alias PhotoBlog.Comments.Comment
+  alias Events.Comments.Comment
 
   @doc """
   Returns the list of comments.

@@ -1,6 +1,6 @@
-defmodule PhotoBlogWeb.CommentView do
-  use PhotoBlogWeb, :view
-  alias PhotoBlogWeb.CommentView
+defmodule EventsWeb.CommentView do
+  use EventsWeb, :view
+  alias EventsWeb.CommentView
 
   def render("index.json", %{comments: comments}) do
     %{data: render_many(comments, CommentView, "comment.json")}

@@ -1,12 +1,12 @@
-defmodule PhotoBlog.Posts do
+defmodule Events.Posts do
   @moduledoc """
   The Posts context.
   """
 
   import Ecto.Query, warn: false
-  alias PhotoBlog.Repo
+  alias Events.Repo
 
-  alias PhotoBlog.Posts.Post
+  alias Events.Posts.Post
 
   @doc """
   Returns the list of posts.

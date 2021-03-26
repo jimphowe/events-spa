@@ -1,6 +1,6 @@
-defmodule PhotoBlogWeb.UserView do
-  use PhotoBlogWeb, :view
-  alias PhotoBlogWeb.UserView
+defmodule EventsWeb.UserView do
+  use EventsWeb, :view
+  alias EventsWeb.UserView
 
   def render("index.json", %{users: users}) do
     %{data: render_many(users, UserView, "user.json")}

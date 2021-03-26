@@ -1,11 +1,11 @@
-defmodule PhotoBlog.Comments.Comment do
+defmodule Events.Comments.Comment do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "comments" do
     field :body, :string
-    belongs_to :user, PhotoBlog.Users.User
-    belongs_to :post, PhotoBlog.Posts.Post
+    belongs_to :user, Events.Users.User
+    belongs_to :post, Events.Posts.Post
 
     timestamps()
   end

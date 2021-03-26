@@ -1,10 +1,10 @@
-defmodule PhotoBlogWeb.UserController do
-  use PhotoBlogWeb, :controller
+defmodule EventsWeb.UserController do
+  use EventsWeb, :controller
 
-  alias PhotoBlog.Users
-  alias PhotoBlog.Users.User
+  alias Events.Users
+  alias Events.Users.User
 
-  action_fallback PhotoBlogWeb.FallbackController
+  action_fallback EventsWeb.FallbackController
 
   def index(conn, _params) do
     users = Users.list_users()

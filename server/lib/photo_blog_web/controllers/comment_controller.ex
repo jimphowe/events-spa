@@ -1,10 +1,10 @@
-defmodule PhotoBlogWeb.CommentController do
-  use PhotoBlogWeb, :controller
+defmodule EventsWeb.CommentController do
+  use EventsWeb, :controller
 
-  alias PhotoBlog.Comments
-  alias PhotoBlog.Comments.Comment
+  alias Events.Comments
+  alias Events.Comments.Comment
 
-  action_fallback PhotoBlogWeb.FallbackController
+  action_fallback EventsWeb.FallbackController
 
   def index(conn, _params) do
     comments = Comments.list_comments()

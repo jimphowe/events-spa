@@ -1,15 +1,13 @@
-defmodule PhotoBlog.Users.User do
+defmodule Events.Users.User do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "users" do
     field :name, :string
     field :password_hash, :string
-    # field :password, :string, virtual: true
 
-    has_many :posts, PhotoBlog.Posts.Post
-    has_many :comments, PhotoBlog.Comments.Comment
-    has_many :votes, PhotoBlog.Votes.Vote
+    has_many :posts, Events.Posts.Post
+    has_many :comments, Events.Comments.Comment
 
     timestamps()
   end

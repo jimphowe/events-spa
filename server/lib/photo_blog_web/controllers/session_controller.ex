@@ -1,8 +1,8 @@
-defmodule PhotoBlogWeb.SessionController do
-  use PhotoBlogWeb, :controller
+defmodule EventsWeb.SessionController do
+  use EventsWeb, :controller
 
   def create(conn, %{"name" => name, "password" => password}) do
-    user = PhotoBlog.Users.authenticate(name, password)
+    user = Events.Users.authenticate(name, password)
     if user do
       sess = %{
         user_id: user.id,

@@ -1,7 +1,7 @@
-defmodule PhotoBlogWeb.PostView do
-  use PhotoBlogWeb, :view
-  alias PhotoBlogWeb.PostView
-  alias PhotoBlogWeb.UserView
+defmodule EventsWeb.PostView do
+  use EventsWeb, :view
+  alias EventsWeb.PostView
+  alias EventsWeb.UserView
 
   def render("index.json", %{posts: posts}) do
     %{data: render_many(posts, PostView, "post.json")}
@@ -20,8 +20,9 @@ defmodule PhotoBlogWeb.PostView do
 
     %{
       id: post.id,
+      eventname: post.eventname,
+      date: post.date,
       body: post.body,
-      photo_hash: post.photo_hash,
       user: user,
     }
   end

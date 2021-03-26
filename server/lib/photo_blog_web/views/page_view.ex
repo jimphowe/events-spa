@@ -1,3 +1,3 @@
-defmodule PhotoBlogWeb.PageView do
-  use PhotoBlogWeb, :view
+defmodule EventsWeb.PageView do
+  use EventsWeb, :view
 end

@@ -1,8 +1,8 @@
-defmodule PhotoBlogWeb.UserControllerTest do
-  use PhotoBlogWeb.ConnCase
+defmodule EventsWeb.UserControllerTest do
+  use EventsWeb.ConnCase
 
-  alias PhotoBlog.Users
-  alias PhotoBlog.Users.User
+  alias Events.Users
+  alias Events.Users.User
 
   @create_attrs %{
     name: "some name",

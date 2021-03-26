@@ -1,6 +1,6 @@
-defmodule PhotoBlog do
+defmodule Events do
   @moduledoc """
-  PhotoBlog keeps the contexts that define your domain
+  Events keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

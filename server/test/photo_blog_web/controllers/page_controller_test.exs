@@ -1,5 +1,5 @@
-defmodule PhotoBlogWeb.PageControllerTest do
-  use PhotoBlogWeb.ConnCase
+defmodule EventsWeb.PageControllerTest do
+  use EventsWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

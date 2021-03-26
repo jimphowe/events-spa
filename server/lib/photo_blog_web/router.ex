@@ -1,5 +1,5 @@
-defmodule PhotoBlogWeb.Router do
-  use PhotoBlogWeb, :router
+defmodule EventsWeb.Router do
+  use EventsWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,20 +13,18 @@ defmodule PhotoBlogWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PhotoBlogWeb do
+  scope "/", EventsWeb do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/photos/:hash", PageController, :photo
   end
 
-  scope "/api/v1", PhotoBlogWeb do
+  scope "/api/v1", EventsWeb do
     pipe_through :api
 
     resources "/users", UserController, except: [:new, :edit]
     resources "/posts", PostController, except: [:new, :edit]
     resources "/comments", CommentController, except: [:new, :edit]
-    resources "/votes", VoteController, except: [:new, :edit]
     resources "/session", SessionController, only: [:create]
   end
 
@@ -35,7 +33,7 @@ defmodule PhotoBlogWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: PhotoBlogWeb.Telemetry
+      live_dashboard "/dashboard", metrics: EventsWeb.Telemetry
     end
   end
 end
