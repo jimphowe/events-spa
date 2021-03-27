@@ -31,11 +31,11 @@ defmodule EventsWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("photo_blog.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("photo_blog.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("photo_blog.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("photo_blog.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("photo_blog.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("events.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("events.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("events.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("events.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("events.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),

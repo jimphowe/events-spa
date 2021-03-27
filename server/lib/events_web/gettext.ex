@@ -20,5 +20,5 @@ defmodule EventsWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :photo_blog
+  use Gettext, otp_app: :events
 end

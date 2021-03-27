@@ -1,12 +1,12 @@
 defmodule EventsWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :photo_blog
+  use Phoenix.Endpoint, otp_app: :events
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_photo_blog_key",
+    key: "_events_key",
     signing_salt: "tAC5kuvw"
   ]
 
@@ -22,7 +22,7 @@ defmodule EventsWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :photo_blog,
+    from: :events,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -32,7 +32,7 @@ defmodule EventsWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :photo_blog
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :events
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

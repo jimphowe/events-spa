@@ -30,7 +30,7 @@ defmodule EventsWeb do
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/photo_blog_web/templates",
+        root: "lib/events_web/templates",
         namespace: EventsWeb
 
       # Import convenience functions from controllers
