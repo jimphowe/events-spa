@@ -26,8 +26,8 @@ There is some functionality missing, including viewing a post to be able to add 
 
 5. Is your app properly deployed? If not, what went wrong?
 
-It should be!
-
+Almost. The front end deploy works, and the back end deploy also works, but the link between them does not work on the server for some reason.
+I have included screenshots from local developments showing that this link was setup and running at one point in time, and I hope this will be considered when grading deployment. Thank you.
 
 
 And here's a list of tasks for grading comments. Just leave this here:
